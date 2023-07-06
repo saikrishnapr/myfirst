@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Display</title>
+</head>
+<body>
+    <h1>Data Display</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Sno</th>
+                <th>Item</th>
+                <th>Type</th>
+                <th>Location</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data %}
+            <tr>
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1] }}</td>
+                <td>{{ row[2] }}</td>
+                <td>{{ row[3] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
