@@ -1,15 +1,16 @@
 from flask import Flask, render_template
 import mysql.connector
+import config
 
 app = Flask(__name__)
 
 # MySQL Configuration
-mysql_config = {
-    'host': 'localhost',
-    'user': 'sk',
-    'password': 'Password@123',
-    'database': 'cafe'
-}
+mysql_config = mysql.connector.connect(host=config._DB_CONF['host'], 
+                           port=config._DB_CONF['port'], 
+                           user=config._DB_CONF['user'], 
+                           passwd=config._DB_CONF['passwd'], 
+                           db=config._DB_CONF['db'])
+
 
 @app.route('/')
 def display_data():
